@@ -10,6 +10,7 @@ import {
     createRootRoute,
 } from "@tanstack/react-router"
 import { createQueryClient } from "@/lib/query-client"
+import { NotFoundPage } from "@/components/not-found"
 import { ThemeProvider } from "@/components/theme-provider"
 import appCss from "@/styles/app.css?url"
 
@@ -39,6 +40,7 @@ const RootDocument = ({ children }: Readonly<{ children: ReactNode }>) => (
 )
 
 export const Route = createRootRoute({
+    notFoundComponent: NotFoundPage,
     head: () => ({
         meta: [
             {
